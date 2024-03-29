@@ -1,9 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue2";
-import vueJsx from "@vitejs/plugin-vue2-jsx";
 import { fileURLToPath, URL } from "node:url";
-import AutoImport from "unplugin-auto-import/vite";
-import viteCompression from "vite-plugin-compression";
 
 const DIST_URL = new URL("./src/release_ext", import.meta.url);
 
@@ -38,29 +35,7 @@ export default defineConfig(({ mode }) => {
       },
     },
 
-    plugins: [
-      vueJsx(),
-      vue(),
-      AutoImport({
-        include: [
-          /\.jsx?$/, // .js, .jsx
-          /\.vue$/,
-          /\.vue\?vue/, // .vue
-        ],
-        imports: [
-          {
-            lodash: [["_"]],
-          },
-        ],
-      }),
-      viteCompression({
-        verbose: true,
-        disable: false,
-        threshold: 10240,
-        algorithm: "gzip",
-        ext: ".gz",
-      }),
-    ],
+    plugins: [vue()],
 
     css: {
       devSourcemap: mode !== "production",
