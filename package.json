@@ -1,0 +1,20 @@
+{
+    "name": "vite-multi-entry-build",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite serve --host",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "vue": "2.7"
+    },
+    "devDependencies": {
+        "@types/node": "20.11.13",
+        "@vitejs/plugin-vue2": "2.3.1",
+        "@vitejs/plugin-vue2-jsx": "1.1.1",
+        "unplugin-auto-import": "^0.17.5",
+        "vite": "5.1.5",
+        "vite-plugin-compression": "^0.5.1"
+    }
+}
